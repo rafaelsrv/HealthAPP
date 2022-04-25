@@ -50,6 +50,14 @@ const styles = StyleSheet.create({
         margin:30,
     },
 
+    errorMsg:{
+        fontSize:16,
+        fontWeight:"bold",
+        color:"red",
+        paddingLeft:20,
+    }
+    
+
     
 });
 
