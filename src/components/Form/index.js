@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {Fragment, useState} from "react"
 import {
     View,
     Text,
@@ -43,23 +43,26 @@ export default function Form(){
             setmessageimc("seu imc é igual: ")
             setTextButton("Calcular novamente")
             setErrorMsg(null)
-            return
 
         }
+        else{
         verifyNull()
         setimc(null)
         setTextButton("calcular")
         setmessageimc("preencha peso e altura")
-        
+        }
     }
 
     return(
 
-        <Pressable onPress={Keyboard.dismiss} style={styles.formContext}>
-            <View style={styles.form}> 
+        
+            <View style={styles.formContext}>
+                {imc == null ? (
+        <Pressable onPress={Keyboard.dismiss} style={styles.form}>
+            <Fragment>     
             <Text style={styles.formLabel}>
                 Altura
-            </Text >
+            </Text >    
             <Text style={styles.errorMsg}>{errorMsg}</Text>
             <TextInput onChangeText={setHeight}
                        value={height} 
@@ -81,13 +84,24 @@ export default function Form(){
                        
             <TouchableOpacity 
             style={styles.formCalc}
-            onPress={() =>{validationimc()}}
+            onPress={() =>{validationimc();}}
+                >
+                    <Text style={styles.formButtom}>{textButton}</Text>
+            </TouchableOpacity>     
+        </Fragment>               
+        </Pressable>
+      )  :
+        <View style={styles.exibitionResultImc}>
+
+            <ResultImc messageresultimc = {messageimc} resultImc={imc}/>
+            <TouchableOpacity 
+            style={styles.formCalc}
+            onPress={() =>{validationimc();}}
                 >
                         <Text style={styles.formButtom}>{textButton}</Text>
-            </TouchableOpacity>     
-
+            </TouchableOpacity>
+        
         </View>
-            <ResultImc messageresultimc = {messageimc} resultImc={imc}/>
-        </Pressable>
-    );
-}
+        }   
+        </View>
+    )}
