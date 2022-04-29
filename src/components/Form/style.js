@@ -3,10 +3,10 @@ import {StyleSheet} from "react-native"
 const styles = StyleSheet.create({
     formContext: {
         
-        flex :1,
-        /* width:"100%",
-        height:"100%", */
-        /* bottom:0, */
+        /* flex :1,
+        width:"100%",
+        height:"100%", */ 
+        /* bottom:0,
         backgroundColor:"#ffffff",
         alignItems:"center",
         /* marginTop:10, */
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         
     },
     form:{
-        width:50,
+        width:"100%",
         
        /*  marginTop: 30,
         padding:30, */
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     },
     formLabel:{
         color:"#000000",
-        fontSize:15,
+        fontSize:13,
         paddingLeft:10,
     },
     formInput:{
@@ -65,7 +65,26 @@ const styles = StyleSheet.create({
         height:"50%",
 
 
-    }
+    },
+    ListIMC:{
+        marginTop:10,
+        
+
+    },
+    resultImcItem:{
+        fontSize:26,
+        color:"red",
+        height:50,
+        width:"100%",
+        paddingLeft:60,
+        alignItems:"center",
+        
+    },
+    textResultItemList:{
+        color:"red",
+        fontSize:16,
+        paddingRight:20,
+    },
     
 
     
